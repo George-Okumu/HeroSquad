@@ -54,4 +54,10 @@ public class SquadTest {
         Squad.clear();
         assertEquals(Squad.all().size(), 0);
     }
+    @Test
+    public void getId_squadsInstantiateWithAnID_1() throws Exception{
+        Squad.clear();
+        Squad squad = new Squad("Avengers", 10, "Save America");
+        assertEquals(1, squad.getId());
+    }
 }
