@@ -44,4 +44,7 @@ public class Hero {
     public static List<Hero> all(){
         return heroes;
     }
+    public static void clear(){
+        heroes.clear(); //clear as a method is part of the ArrayList class.
+    }
 }

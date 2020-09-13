@@ -61,5 +61,10 @@ public class HeroTest {
         Hero hero = new Hero("hulk",34,"Strength", "anger");
         assertEquals(LocalDateTime.now().getDayOfWeek(), hero.getCreatedAt().getDayOfWeek());
     }
-
+    @Test
+    public void clear_emptiesAllHeroesFromArrayList_0() {
+        Hero firstHero = new Hero("hulk",34,"Strength", "anger");
+        Hero.clear();
+        assertEquals(Hero.all().size(), 0);
+    }
 }
