@@ -39,4 +39,12 @@ public class SquadTest {
         Squad squad = new Squad("Avengers", 10, "Save America");
         assertEquals("Save America", squad.getSquadCause());
     }
+
+    @Test
+    public void all_returnsAllInstancesOfSquad_true() throws Exception {
+        Squad firstSquad = new Squad("Avengers", 10, "Save America");
+        Squad secondSquad = new Squad("SuperMan", 15, "fight-corruption");
+        assertTrue(Squad.all().contains(firstSquad));
+        assertTrue(Squad.all().contains(secondSquad));
+    }
 }
