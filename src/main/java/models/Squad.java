@@ -10,4 +10,16 @@ public class Squad {
         this.maxSize = maxSize;
         this.squadCause = squadCause;
     }
+
+    public String getSquadName() {
+        return squadName;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public String getSquadCause() {
+        return squadCause;
+    }
 }
