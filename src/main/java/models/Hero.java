@@ -1,5 +1,6 @@
 package models;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +10,14 @@ public class Hero {
     private String specialPower;
     private String weakness;
     private static List<Hero> heroes = new ArrayList<>();
+    private LocalDateTime createdAt;
 
     public Hero(String name, int age, String specialPower, String weakness) {
         this.name = name;
         this.age = age;
         this.specialPower = specialPower;
         this.weakness = weakness;
+        this.createdAt = LocalDateTime.now();
         heroes.add(this);
     }
 
@@ -32,6 +35,10 @@ public class Hero {
 
     public String getWeakness() {
         return weakness;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
     public static List<Hero> all(){
