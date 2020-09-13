@@ -39,4 +39,7 @@ public class Squad {
     public int getId() {
         return id;
     }
+    public static Squad findById(int id){
+       return squads.get(id-1);
+    }
 }

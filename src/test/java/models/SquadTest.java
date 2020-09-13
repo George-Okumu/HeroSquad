@@ -60,4 +60,10 @@ public class SquadTest {
         Squad squad = new Squad("Avengers", 10, "Save America");
         assertEquals(1, squad.getId());
     }
+    @Test
+    public void find_returnsSquadWithSameId_secondSquad() {
+        Squad firstSquad = new Squad("Avengers", 10, "Save America");
+        Squad secondSquad = new Squad("SuperMan", 15, "fight-corruption");
+        assertEquals(Squad.findById(secondSquad.getId()), secondSquad);
+    }
 }
