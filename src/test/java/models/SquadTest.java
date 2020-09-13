@@ -47,4 +47,11 @@ public class SquadTest {
         assertTrue(Squad.all().contains(firstSquad));
         assertTrue(Squad.all().contains(secondSquad));
     }
+
+    @Test
+    public void clear_emptiesAllSquadsFromArrayList_0() {
+        Squad firstSquad = new Squad("Avengers", 10, "Save America");
+        Squad.clear();
+        assertEquals(Squad.all().size(), 0);
+    }
 }
