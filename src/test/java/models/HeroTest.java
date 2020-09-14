@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+
 import static org.junit.Assert.*;
 
 public class HeroTest {
@@ -45,5 +47,24 @@ public class HeroTest {
     public void Hero_instantiatesCorrectlyWithHeroWeakness_string() throws Exception{
         Hero hero = new Hero("hulk",34,"Strength", "anger");
         assertEquals("anger", hero.getWeakness());
+    }
+
+    @Test
+    public void all_returnsAllInstancesOfHero_true() {
+        Hero firstHero = new Hero("hulk",34,"Strength", "anger");
+        Hero secondHero = new Hero("hulk",34,"Strength", "anger");
+        assertEquals(true, Hero.all().contains(firstHero));
+        assertEquals(true, Hero.all().contains(secondHero));
+    }
+    @Test
+    public void getCreatedAt_instantiatesWithCurrentTime_today() throws Exception{
+        Hero hero = new Hero("hulk",34,"Strength", "anger");
+        assertEquals(LocalDateTime.now().getDayOfWeek(), hero.getCreatedAt().getDayOfWeek());
+    }
+    @Test
+    public void clear_emptiesAllHeroesFromArrayList_0() {
+        Hero firstHero = new Hero("hulk",34,"Strength", "anger");
+        Hero.clear();
+        assertEquals(Hero.all().size(), 0);
     }
 }
