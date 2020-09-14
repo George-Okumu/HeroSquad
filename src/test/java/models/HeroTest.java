@@ -21,44 +21,44 @@ public class HeroTest {
 
     @Test
     public void newHeroInstantiatesCorrectly() {
-        Hero hero = new Hero("hulk", 32, "strength", "anger");
+        Hero hero = new Hero("hulk", 32, "strength", "anger","Avengers");
         Assert.assertTrue(true);
     }
 
     @Test
     public void Hero_instantiatesCorrectlyWithHeroName_string () throws Exception{
-        Hero hero = new Hero("hulk",34,"Strength", "anger");
+        Hero hero = new Hero("hulk",34,"Strength", "anger", "Avengers");
         assertEquals("hulk",hero.getName());
     }
 
     @Test
     public void Hero_getsHeroAgeCorrectly_int() throws  Exception {
-        Hero hero = new Hero("hulk",34,"Strength", "anger");
+        Hero hero = new Hero("hulk",34,"Strength", "anger", "Avengers");
         assertEquals(34,hero.getAge());
     }
 
     @Test
     public void Hero_instantiatesCorrectlyWithHeroesSpecialPower_string() throws Exception {
-        Hero hero = new Hero("hulk",34,"Strength", "anger");
+        Hero hero = new Hero("hulk",34,"Strength", "anger", "Avengers");
         assertEquals("Strength", hero.getSpecialPower());
     }
 
     @Test
     public void Hero_instantiatesCorrectlyWithHeroWeakness_string() throws Exception{
-        Hero hero = new Hero("hulk",34,"Strength", "anger");
+        Hero hero = new Hero("hulk",34,"Strength", "anger", "Avengers");
         assertEquals("anger", hero.getWeakness());
     }
 
     @Test
     public void all_returnsAllInstancesOfHero_true() {
-        Hero firstHero = new Hero("hulk",34,"Strength", "anger");
-        Hero secondHero = new Hero("hulk",34,"Strength", "anger");
+        Hero firstHero = new Hero("hulk",34,"Strength", "anger", "Avengers");
+        Hero secondHero = new Hero("hulk",34,"Strength", "anger", "SkyBlues");
         assertEquals(true, Hero.getAllHeroes().contains(firstHero));
         assertEquals(true, Hero.getAllHeroes().contains(secondHero));
     }
     @Test
     public void getCreatedAt_instantiatesWithCurrentTime_today() throws Exception{
-        Hero hero = new Hero("hulk",34,"Strength", "anger");
+        Hero hero = new Hero("hulk",34,"Strength", "anger", "Avengers");
         assertEquals(LocalDateTime.now().getDayOfWeek(), hero.getCreatedAt().getDayOfWeek());
     }
 }

@@ -21,11 +21,7 @@ Published by George Okumu:2020
 
 
 ## Link to heroku/live page
-https://georgeherosquad.herokuapp.com/
-
-## BDD 
-- Click 
-- - Fill in squad credentials, filled details are posted on new squad path
+- https://innocentsherosquadapp.herokuapp.com/
 
 ## Contribution
 - Fork the repo
@@ -33,7 +29,7 @@ https://georgeherosquad.herokuapp.com/
 - Make changes and request for pull here(gokumu12@gmail.com)
 
 ## Known Bugs
-- Hero cant be assigned to squad,
+- Hero cant be assigned to squad,working on it.
 - No database attached
 
 ## Licence
