@@ -1,10 +1,17 @@
 {{#partial "content"}}
-    <div class="panel-footer">
-        <form action="/newSquad" method="post" name="squadForm">
-            <input class="form-control mb0" type="text" placeholder="Enter Squad's Name..." name="squadName" autocomplete="off">
-            <br><p class="label">Squad's Max Size:</p>
-            <input class="form-control mb0" type="number" placeholder="Max Size..." name="maxSize" type="text" />
-            <select class="form-control select2 mt15 mb0" data-placeholder="Squad's Cause" name="squad_cause">
+    <br>
+    <div id="heroform1" class="card">
+        <br>
+        <h4 class="text-primary">Create your Squad</h4><br>
+        <form action="/" method="post" name="squadForm">
+            <input class="form-control mb0" type="text" placeholder="Enter Squad's Name..." name="squadName" autocomplete="off" required>
+            <br>
+
+            <div class="form-group">
+                <input type="number" class="form-control" name="maxSize" id="age" placeholder="Enter Squad Size...." required>
+            </div>
+            <br>
+            <select class="form-control select2 mt15 mb0" data-placeholder="Squad's Cause" name="squadCause">
                 <option label="- Squad's Cause / Motive -"></option>
                 <option value="Track Hacker's">Track Hacker's</option>
                 <option value="Prevent Alien Invasion">Prevent Alien Invasion</option>
@@ -16,7 +23,7 @@
                 <option value="Fight Anti-Heroes">Fight Anti-Heroes</option>
                 <option value="Live Fast, Die Young">Live Fast, Die Young</option>
             </select>
-            <br><button type="submit" class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Create Squad</button>
+            <br><button type="submit" class="btn btn-primary">Create Squad</button>
         </form>
     </div>
 {{/partial}}

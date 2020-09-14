@@ -53,8 +53,8 @@ public class HeroTest {
     public void all_returnsAllInstancesOfHero_true() {
         Hero firstHero = new Hero("hulk",34,"Strength", "anger");
         Hero secondHero = new Hero("hulk",34,"Strength", "anger");
-        assertEquals(true, Hero.all().contains(firstHero));
-        assertEquals(true, Hero.all().contains(secondHero));
+        assertEquals(true, Hero.getAll().contains(firstHero));
+        assertEquals(true, Hero.getAll().contains(secondHero));
     }
     @Test
     public void getCreatedAt_instantiatesWithCurrentTime_today() throws Exception{
@@ -65,6 +65,6 @@ public class HeroTest {
     public void clear_emptiesAllHeroesFromArrayList_0() {
         Hero firstHero = new Hero("hulk",34,"Strength", "anger");
         Hero.clear();
-        assertEquals(Hero.all().size(), 0);
+        assertEquals(Hero.getAll().size(), 0);
     }
 }

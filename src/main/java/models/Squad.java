@@ -10,7 +10,7 @@ public class Squad {
     private static List<Squad> squads = new ArrayList<>();// Will contain all Squad objects
     private int id;
 
-    public Squad(String squadName, int maxSize, String squadCause) {
+    public Squad(String squadName, String squadCause) {
         this.squadName = squadName;
         this.maxSize = maxSize;
         this.squadCause = squadCause;
@@ -30,7 +30,7 @@ public class Squad {
         return squadCause;
     }
 
-    public static List<Squad> all(){
+    public static List<Squad> getAll(){
         return squads;
     }
     public static void clear() {

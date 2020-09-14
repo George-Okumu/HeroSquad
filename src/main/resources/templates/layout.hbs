@@ -3,10 +3,9 @@
 <head>
     <title>{{#block "title"}}Hero Squad{{/block}}</title>
 
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 <body>
 <div class="page-header">
@@ -17,19 +16,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/newHero">Create Hero</a>
                 <a class="nav-item nav-link" href="/newSquad">Create Squad</a>
             </div>
         </div>
     </nav>
 
-    <div class="text-center">
-        <h1>Welcome to Hero Squad.</h1>
-    </div>
 </div>
-<div class="container">
+<div class="body">
     <!--begin main template-->
+    <div class="text-center" id="welcome">
+        <h1>Welcome to Hero Squad.</h1>
+        <p>Where you can create your favorite hero and also assign it to the Squad of your choice</p>
+    </div>
 
     <div class="container">
         {{#block "content"}}

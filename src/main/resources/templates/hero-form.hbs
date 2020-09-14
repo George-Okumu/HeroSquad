@@ -1,13 +1,14 @@
 {{#partial "content"}}
-    <h6 class="text-center welcomePage">Add your Superhero</h6>
-    <div class="card">
-        <form action="/newHero" method="POST" name="heroForm">
+    <br>
+    <div id="heroform1" class="card">
+        <h4 class="text-center text-primary">Create your Superhero</h4>
+        <form action="/" method="POST" name="heroForm">
             <div class="form-group">
-                <input type="text" class="form-control" name="heroName" id="heroName" placeholder="Enter your favorite Hero name...">
+                <input type="text" class="form-control required" name="name" id="name" placeholder="Enter your favorite Hero name..." required>
             </div>
 
             <div class="form-group">
-                <input type="number" class="form-control" name="age" id="age" placeholder="Enter your favorite Hero age....">
+                <input type="number" class="form-control required" name="age" id="age" placeholder="Enter your favorite Hero age...." required>
             </div>
 
             <select  class="browser-default custom-select" name="specialPower">
@@ -33,8 +34,9 @@
                 <option value="Magic">Magic</option>
                 <option value="Asbestos">Asbestos</option>
             </select>
+            <br><br>
 
-            <button type="submit" class="btn btn-success">Add Hero</button>
+            <button type="submit" class="btn btn-primary">Create Hero</button>
         </form>
     </div>
     </div>

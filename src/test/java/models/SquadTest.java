@@ -44,15 +44,15 @@ public class SquadTest {
     public void all_returnsAllInstancesOfSquad_true() throws Exception {
         Squad firstSquad = new Squad("Avengers", 10, "Save America");
         Squad secondSquad = new Squad("SuperMan", 15, "fight-corruption");
-        assertTrue(Squad.all().contains(firstSquad));
-        assertTrue(Squad.all().contains(secondSquad));
+        assertTrue(Squad.getAll().contains(firstSquad));
+        assertTrue(Squad.getAll().contains(secondSquad));
     }
 
     @Test
     public void clear_emptiesAllSquadsFromArrayList_0() {
         Squad firstSquad = new Squad("Avengers", 10, "Save America");
         Squad.clear();
-        assertEquals(Squad.all().size(), 0);
+        assertEquals(Squad.getAll().size(), 0);
     }
     @Test
     public void getId_squadsInstantiateWithAnID_1() throws Exception{
