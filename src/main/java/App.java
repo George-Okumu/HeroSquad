@@ -5,6 +5,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.get;
@@ -22,13 +23,14 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-//        get("/", (request, response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            ArrayList<Hero> Heroes = Hero.getAllHeroes();
-//            ArrayList<Squad> Squads = Squad.getAllSquads();
-//            model.put("Heroes", Heroes);
-//            model.put("Squads", Squads);
-//            return new ModelAndView(model, "index.hbs");
-//        }, new HandlebarsTemplateEngine());
+        // shows all Heroes and Squads Created
+        get("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+           // ArrayList<Hero> Heroes = Hero.();
+            List<Squad> Squads = Squad.all();
+           // model.put("Heroes", Heroes);
+            model.put("Squads", Squads);
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
