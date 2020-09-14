@@ -6,15 +6,15 @@ import java.util.List;
 
 public class Hero {
     private String name;
-    private int age;
+    //private int age;
     private String specialPower;
     private String weakness;
     private static List<Hero> heroes = new ArrayList<>();
     private LocalDateTime createdAt;
 
-    public Hero(String name, int age, String specialPower, String weakness) {
+    public Hero(String name, String specialPower, String weakness) {
         this.name = name;
-        this.age = age;
+        //this.age = age;
         this.specialPower = specialPower;
         this.weakness = weakness;
         this.createdAt = LocalDateTime.now();
@@ -25,9 +25,9 @@ public class Hero {
         return name;
     }
 
-    public int getAge() {
-        return age;
-    }
+//   // public int getAge() {
+//        return age;
+//    }
 
     public String getSpecialPower() {
         return specialPower;
