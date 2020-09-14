@@ -21,7 +21,7 @@ Published by George Okumu:2020
 
 
 ## Link to heroku/live page
-- https://innocentsherosquadapp.herokuapp.com/
+- https://georgeherosquadapp.herokuapp.com/ 
 
 ## Contribution
 - Fork the repo

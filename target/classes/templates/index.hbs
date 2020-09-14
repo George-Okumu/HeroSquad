@@ -1,0 +1,40 @@
+{{#partial "content"}}
+    <div class="row">
+        <div class="col-md-6">
+            <div id="heroDisplay" class="card">
+                <div class="card-body" >
+                    <h3 class="text-center text-primary">Your Squad</h3>
+                    {{#if squads}}
+                        {{#each squads}} <!--loop-->
+
+                            <h5><em class="text-primary">Squad Name: </em> <em>{{ squadName }}</em></h5>
+                            <h5><em class="text-primary">Squad size: </em> {{ maxSize }} </h5>
+                            <h5><em class="text-primary">Squad Cause/motive: </em>{{ squadCause }}</h5>
+                        {{/each}}
+                    {{else}}
+                        <p class="text-danger">Click create Squad to have your squad </p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="heroDisplay" class="card">
+                <div class="card-body" >
+                    <h3 class="text-center text-primary">Your Heroes</h3>
+                    {{#if heroes}}
+                        {{#each heroes}} <!--loop-->
+
+                            <h5><em class="text-primary">Heroes Name: </em> <em>{{ name }}</em></h5>
+                            <h5><em class="text-primary">Heroes age: </em> {{ age }} </h5>
+                            <h5><em class="text-primary">Special Power: </em>{{ specialPower }} | <em class="text-danger">Weakness: </em>{{ weakness }}</h5>
+                            <h5><em class="text-primary">Created on: </em>{{ Hero.createdAt }}</h5>
+                        {{/each}}
+                    {{else}}
+                        <p class="text-danger">Click create Hero to create your  Hero </p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}
