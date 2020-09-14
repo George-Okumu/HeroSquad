@@ -26,10 +26,10 @@ public class App {
         // shows all Heroes and Squads Created
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-           // ArrayList<Hero> Heroes = Hero.();
-            List<Squad> Squads = Squad.all();
-           // model.put("Heroes", Heroes);
-            model.put("Squads", Squads);
+            List<Hero> heroes = Hero.all();
+            List<Squad> squads = Squad.all();
+            model.put("heroes", heroes);
+            model.put("squads", squads);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
     }
