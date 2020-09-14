@@ -6,39 +6,44 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!--    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
 </head>
 <body>
-<div class="page-header">
-    <nav class="navbar  navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">HeroSquad</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/newHero">Create Hero</a>
-                <a class="nav-item nav-link" href="/newSquad">Create Squad</a>
+<div class="container-fluid">
+    <div class="page-header">
+        <nav class="navbar  navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">HeroSquad</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="/newHero">Create Hero</a>
+                    <a class="nav-item nav-link" href="/newSquad">Create Squad</a>
+                </div>
             </div>
+        </nav>
+
+    </div>
+    <div class="body">
+        <!--begin main template-->
+        <div class="text-center" id="welcome">
+            <h1>Welcome to Hero Squad.</h1>
+            <p>Where you can create your favorite hero and also assign it to the Squad of your choice</p>
         </div>
-    </nav>
 
-</div>
-<div class="body">
-    <!--begin main template-->
-    <div class="text-center" id="welcome">
-        <h1>Welcome to Hero Squad.</h1>
-        <p>Where you can create your favorite hero and also assign it to the Squad of your choice</p>
+        <div class="container">
+            {{#block "content"}}
+            {{/block}}
+
+        </div>
     </div>
-
-    <div class="container">
-        {{#block "content"}}
-        {{/block}}
-
-    </div>
-</div>
-<!--end main template-->
+    <!--end main template-->
 {{#block "footer"}}
+</div>
     </body>
     </html>
 {{/block}}
