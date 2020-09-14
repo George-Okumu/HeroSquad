@@ -53,18 +53,12 @@ public class HeroTest {
     public void all_returnsAllInstancesOfHero_true() {
         Hero firstHero = new Hero("hulk",34,"Strength", "anger");
         Hero secondHero = new Hero("hulk",34,"Strength", "anger");
-        assertEquals(true, Hero.getAll().contains(firstHero));
-        assertEquals(true, Hero.getAll().contains(secondHero));
+        assertEquals(true, Hero.getAllHeroes().contains(firstHero));
+        assertEquals(true, Hero.getAllHeroes().contains(secondHero));
     }
     @Test
     public void getCreatedAt_instantiatesWithCurrentTime_today() throws Exception{
         Hero hero = new Hero("hulk",34,"Strength", "anger");
         assertEquals(LocalDateTime.now().getDayOfWeek(), hero.getCreatedAt().getDayOfWeek());
-    }
-    @Test
-    public void clear_emptiesAllHeroesFromArrayList_0() {
-        Hero firstHero = new Hero("hulk",34,"Strength", "anger");
-        Hero.clear();
-        assertEquals(Hero.getAll().size(), 0);
     }
 }

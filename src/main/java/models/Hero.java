@@ -6,31 +6,32 @@ import java.util.List;
 
 public class Hero {
     private String name;
-    private int age;
+    //private int age;
     private String specialPower;
     private String weakness;
-    private static List<Hero> heroes = new ArrayList<>();
+    private static ArrayList<Hero> allHeroes = new ArrayList<>();
     private LocalDateTime createdAt;
 
-    public Hero(String name, int age,String specialPower, String weakness) {
+    public Hero(String name,String specialPower, String weakness) {
         this.name = name;
-        this.age = age;
+        //this.age = age;
         this.specialPower = specialPower;
         this.weakness = weakness;
         this.createdAt = LocalDateTime.now();
-        heroes.add(this);
+        allHeroes.add(this);
     }
 
     public String getName() {
         return name;
     }
 
-    public int getAge() {
-        return age;
-    }
+//    public int getAge() {
+//        return age;
+//    }
 
-    public static List<Hero> getAll() {
-        return heroes;
+
+    public static ArrayList<Hero> getAllHeroes() {
+        return allHeroes;
     }
 
     public String getSpecialPower() {
@@ -46,6 +47,6 @@ public class Hero {
     }
 
     public static void clear(){
-        heroes.clear(); //clear as a method is part of the ArrayList class.
+        allHeroes.clear(); //clear as a method is part of the ArrayList class.
     }
 }
