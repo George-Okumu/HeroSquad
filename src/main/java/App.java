@@ -22,14 +22,13 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //get: show new hero form
+        //get: show new hero form,User requests for to create new objects,server returns page with form for create hero.
         get("/newHero", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-
-        // process new heroes form
+        // process new heroes form,Server grabs attributes from form and rendors a success page
         post("/newHero", (request, response) ->{
             Map<String, Object> model = new HashMap<>();
             String heroName = request.queryParams("heroName");
@@ -39,6 +38,23 @@ public class App {
             Hero newHero = new Hero(heroName, specialPower, weakness);
             model.put("newHero", newHero);
             return new ModelAndView(model, "hero-success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //get to show squad form, User requests for squad form to create new objects, server returns page with add squad
+        get("/newSquad", (req, res)->{
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "squad-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        // process new squads form,Server grabs attributes from form and rendors a success page
+        post("/newSquad", (request, response) ->{
+            Map<String, Object> model = new HashMap<>();
+            String squadName = request.queryParams("squadName");
+            int maxSize = Integer.parseInt(request.queryParams("maxSize"));
+            String squadCause = request.queryParams("squadCause");
+            Squad newSquad = new Squad(squadName, maxSize, squadCause);
+            model.put("newHero", newSquad);
+            return new ModelAndView(model, "squad-success.hbs");
         }, new HandlebarsTemplateEngine());
 
         // shows all Heroes and Squads Created
