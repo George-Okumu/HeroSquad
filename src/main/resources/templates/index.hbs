@@ -1,0 +1,26 @@
+{{#partial "nav"}}
+
+<!--    <ul class="nav nav-tabs">-->
+<!--        <li role="presentation" class="active"><a href="#">Home</a></li>-->
+<!--        <li role="presentation"><a href="/postNewHero/new">Create your Squad</a></li>-->
+<!--        <li role="presentation"><a href="/posts/new">Create your Hero</a></li>-->
+<!--    </ul>-->
+<nav class="navbar  navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">HeroSquad</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/postNewHero/new">Create Hero</a>
+            <a class="nav-item nav-link" href="/postNewHero/new">Create Squad</a>
+        </div>
+    </div>
+</nav>
+    <div class="text-center">
+        <h1>Welcome to Hero Squad.</h1>
+    </div>
+{{/partial}}
+
+{{> layout.hbs }}
