@@ -9,11 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
-import static spark.debug.DebugScreen.enableDebugScreen;
 
 public class App {
     public static void main(String[] args){
-        enableDebugScreen();
 
         staticFileLocation("/public");
 
@@ -27,9 +25,9 @@ public class App {
         post("/squadsForm", (request, response) ->{
             Map<String, Object> model = new HashMap<>();
             String squadName = request.queryParams("squadName");
-            // int maxSize = Integer.parseInt(request.queryParams("maxSize"));
+            int maxSize = Integer.parseInt(request.queryParams("maxSize"));
             String squadCause = request.queryParams("squadCause");
-            Squad newSquad = new Squad(squadName, squadCause);
+            Squad newSquad = new Squad(squadName, maxSize, squadCause);
             model.put("newSquad", newSquad);
             return new ModelAndView(model, "squad-success.hbs");
         }, new HandlebarsTemplateEngine());
@@ -41,14 +39,17 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
-        // process new heroes form,Server grabs attributes from form and rendors a success page
+        // process new heroes form,Server grabs attributes from form and renders a success page
         post("/heroesForm", (request, response) ->{
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
-            // int age = Integer.parseInt(request.queryParams("age"));
+            int age = Integer.parseInt(request.queryParams("age"));
             String specialPower = request.queryParams("specialPower");
             String weakness = request.queryParams("weakness");
-            Hero newHero = new Hero(name,specialPower, weakness);
+            String heroSquad = request.queryParams("heroSquad");
+            //Squad newMember = Squad.find(Integer.parseInt(heroSquad));
+            Hero newHero = new Hero(name, age, specialPower, weakness, heroSquad);
+            //newMember.add(newHero);
             model.put("newHero", newHero);
             return new ModelAndView(model, "hero-success.hbs");
         }, new HandlebarsTemplateEngine());
